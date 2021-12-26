@@ -24,13 +24,16 @@ const NewMealForm = () => {
     };
 
     // use of Fetch API to make a request to the new-meal api and get back a response
-    const response = await fetch('http://localhost:8000/meals', {
-      method: 'POST',
-      body: JSON.stringify(mealData),
-      headers: {
-        'content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(
+      'https://my-json-server.typicode.com/staystrongbg/demo/meals',
+      {
+        method: 'POST',
+        body: JSON.stringify(mealData),
+        headers: {
+          'content-Type': 'application/json',
+        },
+      }
+    );
 
     // parses JSON response into native JavaScript objects
     const data = await response.json();
